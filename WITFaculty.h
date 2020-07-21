@@ -14,12 +14,18 @@ public:
 	// Setter prototypes
 	void setCollege(std::string newCollege);
 	void setOffice(std::string newOffice);
+	void setPay(double newPay);
 	
 	// Getter prototypes
 	std::string getCollege();
 	std::string getOffice();
+	double getPay();
+
+	// Polymorphic function
+	virtual void payMe();
 
 private:
 	// Parameters for the WIT Faculty
 	std::string college, officeLocation;
+	double weeklyPay;
 };

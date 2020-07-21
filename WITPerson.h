@@ -1,5 +1,7 @@
 #pragma once
 #include<string>
+#include<iostream>
+#include<iomanip>
 
 // Define the base class
 class WITPerson
@@ -21,7 +23,10 @@ public:
 	std::string getEmail();
 	int getID();
 
-private:
+	// Define virtual function that turns WITPerson into an abstract class
+	virtual void payMe() = 0;
+
+protected:
 	// Parameters that all classes share
 	std::string name, emailAddress;
 	int WIT_ID;

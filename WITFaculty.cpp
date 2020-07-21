@@ -13,6 +13,13 @@ WITFaculty::~WITFaculty()
 
 }
 
+// Polymorphic function
+void WITFaculty::payMe()
+{
+	std::cout << getName() << "'s weekly pay is: $" << std::setprecision(4) << getPay() << std::endl;
+	return;
+}
+
 // Setters defined in header
 void WITFaculty::setCollege(std::string newCollege)
 {
@@ -24,6 +31,11 @@ void WITFaculty::setOffice(std::string newOffice)
 	officeLocation = newOffice;
 	return;
 }
+void WITFaculty::setPay(double newPay)
+{
+	weeklyPay = newPay;
+	return;
+}
 
 // Getters defined in header
 std::string WITFaculty::getCollege()
@@ -33,4 +45,8 @@ std::string WITFaculty::getCollege()
 std::string WITFaculty::getOffice()
 {
 	return officeLocation;
+}
+double WITFaculty::getPay()
+{
+	return weeklyPay;
 }
