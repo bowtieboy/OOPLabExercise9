@@ -1,10 +1,11 @@
 #include "WITFaculty.h"
 
 // Constructor defined in header
-WITFaculty::WITFaculty(std::string n, std::string email, int ID, std::string c, std::string o) : WITPerson(n, email, ID)
+WITFaculty::WITFaculty(std::string n, std::string email, int ID, std::string c, std::string o, double p) : WITPerson(n, email, ID)
 {
 	setCollege(c);
 	setOffice(o);
+	setPay(p);
 }
 
 // Destructor defined in header

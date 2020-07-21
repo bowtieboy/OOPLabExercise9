@@ -5,6 +5,8 @@ WITStaff::WITStaff(std::string n, std::string email, int ID, std::string d, std:
 {
 	setDepartment(d);
 	setSuper(s);
+	setHours(h);
+	setRate(r);
 }
 
 // Destructor defined in header

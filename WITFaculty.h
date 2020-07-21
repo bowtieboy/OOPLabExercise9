@@ -6,7 +6,7 @@ class WITFaculty : public WITPerson
 {
 public:
 	// Consturctor prototype
-	WITFaculty(std::string n, std::string email, int ID, std::string c, std::string o);
+	WITFaculty(std::string n, std::string email, int ID, std::string c, std::string o, double pay);
 	
 	// Destructor prototype
 	~WITFaculty();

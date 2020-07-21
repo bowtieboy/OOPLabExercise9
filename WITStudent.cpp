@@ -1,10 +1,12 @@
 #include "WITStudent.h"
 
 // Constructor defined in header
-WITStudent::WITStudent(std::string n, std::string email, int ID, std::string m, std::string a) : WITPerson(n, email, ID)
+WITStudent::WITStudent(std::string n, std::string email, int ID, std::string m, std::string a, double h, double r) : WITPerson(n, email, ID)
 {
 	setMajor(m);
 	setAdvisor(a);
+	setHours(h);
+	setRate(r);
 }
 
 // Destructor defined in header

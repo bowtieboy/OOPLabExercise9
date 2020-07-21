@@ -6,7 +6,7 @@ class WITStudent : public WITPerson
 {
 public:
 	// Constructor prototype
-	WITStudent(std::string n, std::string email, int ID, std::string m, std::string a);
+	WITStudent(std::string n, std::string email, int ID, std::string m, std::string a, double h, double r);
 	
 	// Destructor prototype
 	~WITStudent();

@@ -3,7 +3,7 @@
 #include<iostream>
 #include<iomanip>
 
-// Define the base class
+// Define the abstract base class
 class WITPerson
 {
 public:
@@ -24,7 +24,7 @@ public:
 	int getID();
 
 	// Define virtual function that turns WITPerson into an abstract class
-	virtual void payMe() = 0;
+	virtual void payMe() = 0; // Pure virtual function
 
 protected:
 	// Parameters that all classes share
