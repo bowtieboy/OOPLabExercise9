@@ -26,7 +26,6 @@ void WITStaff::payMe()
 		payCheck += 40 * getRate();
 	}
 	else payCheck = getHours() * getRate();
-
 	std::cout << getName() << "'s weekly pay is: $" << std::setprecision(4) << payCheck << std::endl;
 	return;
 }
