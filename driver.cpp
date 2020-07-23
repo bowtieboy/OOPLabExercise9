@@ -31,7 +31,7 @@ void testArray()
 	}
 }
 
-void menu()
+void menu(vector<WITPerson*> people)
 {
 	// This will be used as the user's input
 	int userSelection;
@@ -46,11 +46,58 @@ void menu()
 	cout << "7. Quit" << endl;
 	// This is reading the user's input
 	cin >> userSelection;
+	// Variables used by the menu
+	string name, email, major, advisor, department, super, college, office;
+	int id, pType, hours, rate, salary;
 	// Checking to make sure the user input is within the correct bounds
 	if (userSelection > 0 && userSelection < 8)
 	{
 		switch (userSelection) {
 		case 1:
+			cout << "Enter the person's name: ";
+			getline(cin, name);
+			cout << "Enter the peron's email: ";
+			getline(cin, email);
+			cout << "Enter the person's ID: ";
+			cin >> id;
+			cout << "Enter the person type (1 - Student, 2 - Staff, 3 - Faculty): ";
+			cin >> pType;
+
+			switch (pType)
+			{
+			case 1:
+				cout << "Enter the student's major: ";
+				getline(cin, major);
+				cout << "Enter the student's advisor: ";
+				getline(cin, advisor);
+				cout << "Enter the hours worked by the student: ";
+				cin >> hours;
+				cout << "Enter the hourly rate of the student: ";
+				cin >> rate;
+				people.push_back(new WITStudent(name, email, id, major, advisor, hours, rate));
+				break;
+			case 2:
+				cout << "Enter the staff's department: ";
+				getline(cin, department);
+				cout << "Enter the staff's supervisor: ";
+				getline(cin, super);
+				cout << "Enter the hours worked by the staff: ";
+				cin >> hours;
+				cout << "Enter the hourly rate of the staff: ";
+				cin >> rate;
+				people.push_back(new WITStaff(name, email, id, department, super, hours, rate));
+				break;
+			case 3:
+				cout << "Enter the faculty's college: ";
+				getline(cin, college);
+				cout << "Enter the faculty's office: ";
+				getline(cin, office);
+				cout << "Enter the faculty's salary: ";
+				cin >> salary;
+				people.push_back(new WITFaculty(name, email, id, college, office, salary));
+				break;
+			}
+
 			break;
 		case 2:
 			break;
@@ -71,9 +118,9 @@ void menu()
 
 int main()
 {
-	vector<WITPerson*> person;
+	vector<WITPerson*> people;
 	// This is making the code run forever
 	while (1) {
-		menu();
+		menu(people);
 	}
 }
