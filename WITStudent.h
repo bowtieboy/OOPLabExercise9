@@ -1,5 +1,6 @@
 #pragma once
 #include "WITPerson.h"
+#include<string>
 
 // Define inherited class
 class WITStudent : public WITPerson
@@ -26,7 +27,7 @@ public:
 	double getRate();
 
 	// Polymorphic function
-	virtual double payMe();
+	virtual std::string payMe();
 
 private:
 	// Parameters for the WIT student

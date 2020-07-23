@@ -1,4 +1,5 @@
 #include "WITStaff.h"
+#include<string>
 
 // Constructor defined in header
 WITStaff::WITStaff(std::string n, std::string email, int ID, std::string d, std::string s, double h, double r) : WITPerson(n, email, ID)
@@ -15,7 +16,7 @@ WITStaff::~WITStaff()
 }
 
 // Polymorphic function
-double WITStaff::payMe()
+std::string WITStaff::payMe()
 {
 	double payCheck = 0;
 
@@ -27,7 +28,9 @@ double WITStaff::payMe()
 	}
 	else payCheck = getHours() * getRate();
 
-	return payCheck;
+	std::string pay = WITPerson::name + " made $" + std::to_string(payCheck) + " this month.";
+
+	return pay;
 }
 
 // Setters defined in header

@@ -1,5 +1,6 @@
 #include "WITStudent.h"
 #include "WITPerson.h"
+#include<string>
 #include <iostream>
 
 // Constructor defined in header
@@ -17,9 +18,10 @@ WITStudent::~WITStudent()
 }
 
 // Polymorphic function
-double WITStudent::payMe()
+std::string WITStudent::payMe()
 {
-	return getHours() * getRate();
+	std::string pay = WITPerson::name + " made $" + std::to_string(getHours() * getRate()) + " this month.";
+	return pay;
 }
 
 // Setters defined in header
@@ -42,11 +44,6 @@ void WITStudent::setRate(double newRate)
 {
 	hourlyRate = newRate;
 	return;
-}
-
-void getInfo()
-{
-	std::cout << "Name: " << name << " Email: " << emailAddress;
 }
 
 // Getters defined in header

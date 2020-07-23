@@ -1,4 +1,5 @@
 #include "WITFaculty.h"
+#include<string>
 
 // Constructor defined in header
 WITFaculty::WITFaculty(std::string n, std::string email, int ID, std::string c, std::string o, double p) : WITPerson(n, email, ID)
@@ -11,13 +12,13 @@ WITFaculty::WITFaculty(std::string n, std::string email, int ID, std::string c, 
 // Destructor defined in header
 WITFaculty::~WITFaculty()
 {
-
 }
 
 // Polymorphic function
-double WITFaculty::payMe()
+std::string WITFaculty::payMe()
 {
-	return getPay();
+	std::string pay = WITPerson::name + " made $" + std::to_string(monthlyPay) + " this month.";
+	return pay;
 }
 
 // Setters defined in header
@@ -33,7 +34,7 @@ void WITFaculty::setOffice(std::string newOffice)
 }
 void WITFaculty::setPay(double newPay)
 {
-	weeklyPay = newPay;
+	monthlyPay = newPay / 12;
 	return;
 }
 
@@ -48,5 +49,5 @@ std::string WITFaculty::getOffice()
 }
 double WITFaculty::getPay()
 {
-	return weeklyPay;
+	return monthlyPay;
 }
