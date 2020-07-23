@@ -8,6 +8,7 @@ using namespace std;
 
 //void testPerson() 
 //{
+// This shit is gone
 //	// Creating a single person to test the functionality
 //	WITPerson* NewStudent = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
 //	// Displaying the new pesons pay
