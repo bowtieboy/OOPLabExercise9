@@ -24,7 +24,15 @@ std::string WITStudent::payMe()
 	std::string pay = WITPerson::name + " made $" + std::to_string(getHours() * getRate()) + " this month.";
 	return pay;
 }
-
+void WITStudent::getInfo()
+{
+	std::cout << "Student Name: " << WITPerson::name << std::endl;
+	std::cout << "Email Address: " << WITPerson::emailAddress << std::endl;
+	std::cout << "WIT ID Number: " << WITPerson::WIT_ID << std::endl;
+	std::cout << "Major: " << major << std::endl;
+	std::cout << "Advisor: " << advisor << std::endl;
+	std::cout << "Monthly Pay: " << getTotal() << std::endl;
+}
 // Setters defined in header
 void WITStudent::setMajor(std::string newMajor)
 {
@@ -63,4 +71,8 @@ double WITStudent::getHours()
 double WITStudent::getRate()
 {
 	return hourlyRate;
+}
+double WITStudent::getTotal()
+{
+	return hoursWorked * hourlyRate;
 }

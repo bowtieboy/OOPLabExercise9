@@ -21,9 +21,9 @@ public:
 	std::string getCollege();
 	std::string getOffice();
 	double getPay();
-
 	// Polymorphic function
 	virtual std::string payMe();
+	virtual void getInfo();
 
 private:
 	// Parameters for the WIT Faculty

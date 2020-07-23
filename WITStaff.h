@@ -22,9 +22,10 @@ public:
 	std::string getSuper();
 	double getHours();
 	double getRate();
-
+	double getTotal();
 	// Polymorphic function
 	virtual std::string payMe();
+	virtual void getInfo();
 
 private:
 	// Parameters for the WIT staff

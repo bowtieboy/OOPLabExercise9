@@ -6,32 +6,6 @@
 
 using namespace std;
 
-//void testPerson() 
-//{
-// This shit is gone
-//	// Creating a single person to test the functionality
-//	WITPerson* NewStudent = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
-//	// Displaying the new pesons pay
-//	NewStudent->payMe();
-//	// Calling the destructor to get rid of the person
-//	NewStudent->~WITPerson();
-//	cout << endl;
-//}
-//
-//void testArray()
-//{
-//	// Creating an array to test functionality
-//	WITPerson* people[3];
-//	people[0] = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
-//	people[1] = new WITStaff("Dow Jones", "jonesd@wit.edu", 032, "Finance", "God", 40, 75);
-//	people[2] = new WITFaculty("Jack Cough", "coughj@wit.edu", 420, "MassArt", "Beatty", 700);
-//	// Displaying the created array
-//	for (unsigned int i = 0; i < 3; i++)
-//	{
-//		people[i]->payMe();
-//	}
-//}
-
 void menu(vector<WITPerson*> people)
 {
 	// This will be used as the user's input
@@ -59,9 +33,10 @@ void menu(vector<WITPerson*> people)
 		switch (userSelection) {
 		case 1:
 			cout << "Enter the person's name: ";
+			cin.ignore();
 			getline(cin, name);
 			cout << "Enter the peron's email: ";
-			getline(cin, email);
+			cin >> email;
 			cout << "Enter the person's ID: ";
 			cin >> id;
 			cout << "Enter the person type (1 - Student, 2 - Staff, 3 - Faculty): ";
@@ -71,8 +46,10 @@ void menu(vector<WITPerson*> people)
 			{
 			case 1:
 				cout << "Enter the student's major: ";
+				cin.ignore();
 				getline(cin, major);
 				cout << "Enter the student's advisor: ";
+				cin.ignore();
 				getline(cin, advisor);
 				cout << "Enter the hours worked by the student: ";
 				cin >> hours;
@@ -82,8 +59,10 @@ void menu(vector<WITPerson*> people)
 				break;
 			case 2:
 				cout << "Enter the staff's department: ";
+				cin.ignore();
 				getline(cin, department);
 				cout << "Enter the staff's supervisor: ";
+				cin.ignore();
 				getline(cin, super);
 				cout << "Enter the hours worked by the staff: ";
 				cin >> hours;
@@ -93,8 +72,10 @@ void menu(vector<WITPerson*> people)
 				break;
 			case 3:
 				cout << "Enter the faculty's college: ";
+				cin.ignore();
 				getline(cin, college);
 				cout << "Enter the faculty's office: ";
+				cin.ignore();
 				getline(cin, office);
 				cout << "Enter the faculty's salary: ";
 				cin >> salary;
@@ -105,6 +86,7 @@ void menu(vector<WITPerson*> people)
 			break;
 		case 2:
 			cout << "Enter the person's name to be deleted: ";
+			cin.ignore();
 			getline(cin, name);
 			for (int i = 0; i < people.size(); i++)
 			{
@@ -114,15 +96,56 @@ void menu(vector<WITPerson*> people)
 					break;
 				}
 			}
-			cout << "No person with the name " + name + " was found in the database.";
+			cout << "No person with the name " + name + " was found in the database." << endl;
 			break;
 		case 3:
+			cout << "Enter the person's name: ";
+			cin.ignore();
+			getline(cin, name);
+			for (int i = 0; i < people.size(); i++)
+			{
+				if (people[i]->getName() == name)
+				{
+					people[i]->getInfo();
+					break;
+				}
+				cout << i;
+			}
+			cout << "No person with the name " + name + " was found in the database." << endl;
 			break;
 		case 4:
+			cout << "Enter the person's WIT ID: ";
+			cin >> id;
+			for (int i = 0; i < people.size(); i++)
+			{
+				if (people[i]->getID() == id)
+				{
+					people[i]->getInfo();
+					break;
+				}
+			}
+			cout << "No ID " << id << " was found in the database." << endl;
 			break;
 		case 5:
+			cout << "Enter the person's name: ";
+			cin.ignore();
+			getline(cin, name);
+			for (int i = 0; i < people.size(); i++)
+			{
+				if (people[i]->getName() == name)
+				{
+					people[i]->payMe();
+					break;
+				}
+			}
+			cout << "No person with the name " + name + " was found in the database." << endl;
 			break;
 		case 6:
+			cout << "Displaying the data base information: " << endl;
+			for (int i = 0; i < people.size(); i++)
+			{
+				people[i]->getInfo();
+			}
 			break;
 		case 7:
 			exit(0);

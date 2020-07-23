@@ -52,3 +52,4 @@ int WITPerson::getType()
 {
 	return personType;
 }
+

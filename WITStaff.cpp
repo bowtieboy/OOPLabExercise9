@@ -33,7 +33,15 @@ std::string WITStaff::payMe()
 
 	return pay;
 }
-
+void WITStaff::getInfo()
+{
+	std::cout << "Staff Name: " << WITPerson::name << std::endl;
+	std::cout << "Email Address: " << WITPerson::emailAddress << std::endl;
+	std::cout << "WIT ID Number: " << WITPerson::WIT_ID << std::endl;
+	std::cout << "Department: " << department << std::endl;
+	std::cout << "Supervisor: " << supervisor << std::endl;
+	std::cout << "Monthly Pay: " << getTotal() << std::endl;
+}
 // Setters defined in header
 void WITStaff::setDepartment(std::string newDep)
 {
@@ -72,4 +80,8 @@ double WITStaff::getHours()
 double WITStaff::getRate()
 {
 	return hourlyRate;
+}
+double WITStaff::getTotal()
+{
+	return hoursWorked * hourlyRate;
 }

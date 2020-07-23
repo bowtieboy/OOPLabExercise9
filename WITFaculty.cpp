@@ -21,7 +21,15 @@ std::string WITFaculty::payMe()
 	std::string pay = WITPerson::name + " made $" + std::to_string(monthlyPay) + " this month.";
 	return pay;
 }
-
+void WITFaculty::getInfo()
+{
+	std::cout << "Faculty Name: " << WITPerson::name << std::endl;
+	std::cout << "Email Address: " << WITPerson::emailAddress << std::endl;
+	std::cout << "WIT ID Number: " << WITPerson::WIT_ID << std::endl;
+	std::cout << "College: " << college << std::endl;
+	std::cout << "Office Location: " << officeLocation << std::endl;
+	std::cout << "Monthly Pay: " << getPay() << std::endl;
+}
 // Setters defined in header
 void WITFaculty::setCollege(std::string newCollege)
 {

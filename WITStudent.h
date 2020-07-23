@@ -17,17 +17,16 @@ public:
 	void setAdvisor(std::string newAdvisor);
 	void setHours(double newHours);
 	void setRate(double newRate);
-	
-	void getInfo();
 
 	// Getter prototypes
 	std::string getMajor();
 	std::string getAdvisor();
 	double getHours();
 	double getRate();
-
+	double getTotal();
 	// Polymorphic function
 	virtual std::string payMe();
+	virtual void getInfo();
 
 private:
 	// Parameters for the WIT student
