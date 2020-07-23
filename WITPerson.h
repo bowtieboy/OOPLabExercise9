@@ -17,11 +17,13 @@ public:
 	void setName(std::string newName);
 	void setEmail(std::string newEmail);
 	void setID(int newID);
+	void setType(int newType);
 
 	// Getter prototypes
 	std::string getName();
 	std::string getEmail();
 	int getID();
+	int getType();
 
 	// Define virtual function that turns WITPerson into an abstract class
 	virtual std::string payMe() = 0; // Pure virtual function
@@ -29,5 +31,5 @@ public:
 protected:
 	// Parameters that all classes share
 	std::string name, emailAddress;
-	int WIT_ID;
+	int WIT_ID, personType;
 };

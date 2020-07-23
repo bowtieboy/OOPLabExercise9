@@ -8,6 +8,7 @@ WITStaff::WITStaff(std::string n, std::string email, int ID, std::string d, std:
 	setSuper(s);
 	setHours(h);
 	setRate(r);
+	setType(2);
 }
 
 // Destructor defined in header

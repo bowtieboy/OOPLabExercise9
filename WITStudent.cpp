@@ -10,6 +10,7 @@ WITStudent::WITStudent(std::string n, std::string email, int ID, std::string m, 
 	setAdvisor(a);
 	setHours(h);
 	setRate(r);
+	setType(1);
 }
 
 // Destructor defined in header

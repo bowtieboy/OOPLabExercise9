@@ -29,6 +29,11 @@ void WITPerson::setID(int newID)
 	WIT_ID = newID;
 	return;
 }
+void WITPerson::setType(int newType)
+{
+	personType = newType;
+	return;
+}
 
 // Getters defined in header
 std::string WITPerson::getName()
@@ -42,4 +47,8 @@ std::string WITPerson::getEmail()
 int WITPerson::getID()
 {
 	return WIT_ID;
+}
+int WITPerson::getType()
+{
+	return personType;
 }

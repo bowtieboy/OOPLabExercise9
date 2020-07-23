@@ -7,6 +7,7 @@ WITFaculty::WITFaculty(std::string n, std::string email, int ID, std::string c, 
 	setCollege(c);
 	setOffice(o);
 	setPay(p);
+	setType(3);
 }
 
 // Destructor defined in header

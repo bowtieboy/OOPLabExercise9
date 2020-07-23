@@ -6,30 +6,30 @@
 
 using namespace std;
 
-void testPerson() 
-{
-	// Creating a single person to test the functionality
-	WITPerson* NewStudent = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
-	// Displaying the new pesons pay
-	NewStudent->payMe();
-	// Calling the destructor to get rid of the person
-	NewStudent->~WITPerson();
-	cout << endl;
-}
-
-void testArray()
-{
-	// Creating an array to test functionality
-	WITPerson* people[3];
-	people[0] = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
-	people[1] = new WITStaff("Dow Jones", "jonesd@wit.edu", 032, "Finance", "God", 40, 75);
-	people[2] = new WITFaculty("Jack Cough", "coughj@wit.edu", 420, "MassArt", "Beatty", 700);
-	// Displaying the created array
-	for (unsigned int i = 0; i < 3; i++)
-	{
-		people[i]->payMe();
-	}
-}
+//void testPerson() 
+//{
+//	// Creating a single person to test the functionality
+//	WITPerson* NewStudent = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
+//	// Displaying the new pesons pay
+//	NewStudent->payMe();
+//	// Calling the destructor to get rid of the person
+//	NewStudent->~WITPerson();
+//	cout << endl;
+//}
+//
+//void testArray()
+//{
+//	// Creating an array to test functionality
+//	WITPerson* people[3];
+//	people[0] = new WITStudent("Matt Lima", "limam@wit.edu", 025, "Electrical Engineering", "Yugu", 18, 12);
+//	people[1] = new WITStaff("Dow Jones", "jonesd@wit.edu", 032, "Finance", "God", 40, 75);
+//	people[2] = new WITFaculty("Jack Cough", "coughj@wit.edu", 420, "MassArt", "Beatty", 700);
+//	// Displaying the created array
+//	for (unsigned int i = 0; i < 3; i++)
+//	{
+//		people[i]->payMe();
+//	}
+//}
 
 void menu(vector<WITPerson*> people)
 {
@@ -49,6 +49,9 @@ void menu(vector<WITPerson*> people)
 	// Variables used by the menu
 	string name, email, major, advisor, department, super, college, office;
 	int id, pType, hours, rate, salary;
+	WITStudent* student;
+	WITStaff* staff;
+	WITFaculty* faculty;
 	// Checking to make sure the user input is within the correct bounds
 	if (userSelection > 0 && userSelection < 8)
 	{
