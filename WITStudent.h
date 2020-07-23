@@ -17,6 +17,8 @@ public:
 	void setHours(double newHours);
 	void setRate(double newRate);
 	
+	void getInfo();
+
 	// Getter prototypes
 	std::string getMajor();
 	std::string getAdvisor();
@@ -24,7 +26,7 @@ public:
 	double getRate();
 
 	// Polymorphic function
-	virtual void payMe();
+	virtual double payMe();
 
 private:
 	// Parameters for the WIT student

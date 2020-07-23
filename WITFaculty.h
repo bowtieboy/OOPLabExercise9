@@ -22,7 +22,7 @@ public:
 	double getPay();
 
 	// Polymorphic function
-	virtual void payMe();
+	virtual double payMe();
 
 private:
 	// Parameters for the WIT Faculty

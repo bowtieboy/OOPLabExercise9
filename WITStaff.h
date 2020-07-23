@@ -23,7 +23,7 @@ public:
 	double getRate();
 
 	// Polymorphic function
-	virtual void payMe();
+	virtual double payMe();
 
 private:
 	// Parameters for the WIT staff

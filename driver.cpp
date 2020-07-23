@@ -72,7 +72,6 @@ void menu()
 int main()
 {
 	vector<WITPerson*> person;
-	cout << "Why";
 	// This is making the code run forever
 	while (1) {
 		menu();

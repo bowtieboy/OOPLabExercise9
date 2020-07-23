@@ -24,7 +24,7 @@ public:
 	int getID();
 
 	// Define virtual function that turns WITPerson into an abstract class
-	virtual void payMe() = 0; // Pure virtual function
+	virtual double payMe() = 0; // Pure virtual function
 
 protected:
 	// Parameters that all classes share

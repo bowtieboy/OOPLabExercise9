@@ -15,10 +15,9 @@ WITFaculty::~WITFaculty()
 }
 
 // Polymorphic function
-void WITFaculty::payMe()
+double WITFaculty::payMe()
 {
-	std::cout << getName() << "'s weekly pay is: $" << std::setprecision(4) << getPay() << std::endl;
-	return;
+	return getPay();
 }
 
 // Setters defined in header
