@@ -100,6 +100,17 @@ void menu(vector<WITPerson*> people)
 
 			break;
 		case 2:
+			cout << "Enter the person's name to be deleted: ";
+			getline(cin, name);
+			for (int i = 0; i < people.size(); i++)
+			{
+				if (people[i]->getName() == name)
+				{
+					people.erase(people.begin() + i);
+					break;
+				}
+			}
+			cout << "No person with the name " + name + " was found in the database.";
 			break;
 		case 3:
 			break;
