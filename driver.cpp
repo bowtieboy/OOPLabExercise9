@@ -23,11 +23,9 @@ void menu(vector<WITPerson*> people)
 		// This is reading the user's input
 		cin >> userSelection;
 		// Variables used by the menu
-		string name, email, major, advisor, department, super, college, office;
+		string name, email, major, advisor, department, super, college, office, pay;
 		int id, pType, hours, rate, salary;
-		WITStudent* student;
-		WITStaff* staff;
-		WITFaculty* faculty;
+		bool good = false;
 		// Checking to make sure the user input is within the correct bounds
 		if (userSelection > 0 && userSelection < 8)
 		{
@@ -62,7 +60,6 @@ void menu(vector<WITPerson*> people)
 					cin.ignore();
 					getline(cin, department);
 					cout << "Enter the staff's supervisor: ";
-					cin.ignore();
 					getline(cin, super);
 					cout << "Enter the hours worked by the staff: ";
 					cin >> hours;
@@ -93,10 +90,12 @@ void menu(vector<WITPerson*> people)
 					if (people[i]->getName() == name)
 					{
 						people.erase(people.begin() + i);
-						break;
+						good = true;
 					}
 				}
-				cout << "No person with the name " + name + " was found in the database." << endl;
+				if (good == false) {
+					cout << "No person with the name " + name + " was found in the database." << endl;
+				}
 				break;
 			case 3:
 				cout << "Enter the person's name: ";
@@ -107,10 +106,12 @@ void menu(vector<WITPerson*> people)
 					if (people[i]->getName() == name)
 					{
 						people[i]->getInfo();
-						break;
+						good = true;
 					}
 				}
-				cout << "No person with the name " + name + " was found in the database." << endl;
+				if (good == false) {
+					cout << "No person with the name " + name + " was found in the database." << endl;
+				}
 				break;
 			case 4:
 				cout << "Enter the person's WIT ID: ";
@@ -121,10 +122,12 @@ void menu(vector<WITPerson*> people)
 					if (people[i]->getID() == id)
 					{
 						people[i]->getInfo();
-						break;
+						good = true;
 					}
 				}
-				cout << "No ID " << id << " was found in the database." << endl;
+				if (good == false) {
+					cout << "No ID " << id << " was found in the database." << endl;
+				}
 				break;
 			case 5:
 				cout << "Enter the person's name: ";
@@ -134,17 +137,20 @@ void menu(vector<WITPerson*> people)
 				{
 					if (people[i]->getName() == name)
 					{
-						people[i]->payMe();
-						break;
+						cout << people[i]->payMe();
+						good = true;
 					}
 				}
-				cout << "No person with the name " + name + " was found in the database." << endl;
+				if (good == false) {
+					cout << "No person with the name " + name + " was found in the database." << endl;
+				}
 				break;
 			case 6:
 				cout << "Displaying the data base information: " << endl;
 				for (int i = 0; i < people.size(); i++)
 				{
 					people[i]->getInfo();
+					cout << endl;
 				}
 				break;
 			case 7:

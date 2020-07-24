@@ -1,5 +1,6 @@
 #include "WITFaculty.h"
 #include<string>
+#include<sstream>
 
 // Constructor defined in header
 WITFaculty::WITFaculty(std::string n, std::string email, int ID, std::string c, std::string o, double p) : WITPerson(n, email, ID)
@@ -18,7 +19,9 @@ WITFaculty::~WITFaculty()
 // Polymorphic function
 std::string WITFaculty::payMe()
 {
-	std::string pay = WITPerson::name + " made $" + std::to_string(monthlyPay) + " this month.";
+	std::stringstream string;
+	string << std::fixed << std::setprecision(2) << monthlyPay;
+	std::string pay = WITPerson::name + " made $" + string.str() + " this month.";
 	return pay;
 }
 void WITFaculty::getInfo()

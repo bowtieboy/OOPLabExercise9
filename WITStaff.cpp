@@ -1,5 +1,6 @@
 #include "WITStaff.h"
 #include<string>
+#include<sstream>
 
 // Constructor defined in header
 WITStaff::WITStaff(std::string n, std::string email, int ID, std::string d, std::string s, double h, double r) : WITPerson(n, email, ID)
@@ -29,8 +30,9 @@ std::string WITStaff::payMe()
 	}
 	else payCheck = getHours() * getRate();
 
-	std::string pay = WITPerson::name + " made $" + std::to_string(payCheck) + " this month.";
-
+	std::stringstream stream;
+	stream << std::fixed << std::setprecision(2) << payCheck;
+	std::string pay = WITPerson::name + " made $" + stream.str() + " this month.";
 	return pay;
 }
 void WITStaff::getInfo()

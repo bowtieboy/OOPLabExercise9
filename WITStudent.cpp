@@ -2,6 +2,7 @@
 #include "WITPerson.h"
 #include<string>
 #include <iostream>
+#include <sstream>
 
 // Constructor defined in header
 WITStudent::WITStudent(std::string n, std::string email, int ID, std::string m, std::string a, double h, double r) : WITPerson(n, email, ID)
@@ -21,7 +22,10 @@ WITStudent::~WITStudent()
 // Polymorphic function
 std::string WITStudent::payMe()
 {
-	std::string pay = WITPerson::name + " made $" + std::to_string(getHours() * getRate()) + " this month.";
+	double amount = getHours() * getRate();
+	std::stringstream stream;
+	stream << std::fixed << std::setprecision(2) << amount;
+	std::string pay = WITPerson::name + " made $" + stream.str() + " this month.";
 	return pay;
 }
 void WITStudent::getInfo()
